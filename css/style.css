@@ -74,3 +74,9 @@ body {
   }
 
 }
+
+#welcome{
+  text-align: center;
+  font-size: 2rem;
+  color: #1f3a5f;
+}

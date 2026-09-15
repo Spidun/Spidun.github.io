@@ -16,4 +16,4 @@ if (isMorning) {
 	welcome.textContent = "Good Night!";
 }
 
-localStorage.setItem("It's a secret to everybody.", "It's a secret to everybody.");
+localStorage.setItem("It's a secret to everybody.", "Nothing to see here.");

@@ -1,4 +1,33 @@
-console.log("site.js linked successfully");
+const todoList = document.querySelector(".todo-list");
+const newTodo = document.querySelector("#new-todo");
+const addTodoButton = document.querySelector("#add-todo");
+const todos = JSON.parse(localStorage.getItem("todo-list")) || [];
+
+const addTodoToPage = ({ text }) => {
+	const listItem = document.createElement("li");
+	listItem.textContent = text;
+	todoList.append(listItem);
+};
+
+const renderTodos = () => {
+	todoList.innerHTML = "";
+	todos.forEach(addTodoToPage);
+};
+
+renderTodos();
+
+addTodoButton.addEventListener("click", () => {
+	const text = newTodo.value.trim();
+
+	if (!text) {
+		return;
+	}
+
+	todos.push({ text, completed: false });
+	localStorage.setItem("todo-list", JSON.stringify(todos));
+	newTodo.value = "";
+	renderTodos();
+});
 
 const hours = new Date().getHours();
 

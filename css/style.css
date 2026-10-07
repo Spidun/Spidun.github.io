@@ -67,6 +67,40 @@ body {
   font-size: 1rem;
 }
 
+.todo-section h2 {
+  color: #1f3a5f;
+}
+
+.todo-list {
+  padding-left: 1.5rem;
+}
+
+.todo-list li {
+  margin-bottom: 0.6rem;
+}
+
+.todo-controls {
+  display: flex;
+  gap: 0.6rem;
+}
+
+#new-todo {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid #9b9b9b;
+  border-radius: 4px;
+}
+
+#add-todo {
+  padding: 0.65rem 0.9rem;
+  border: 0;
+  border-radius: 4px;
+  background: #1f3a5f;
+  color: #fff;
+  cursor: pointer;
+}
+
 #carousel {
   display: flex;
   justify-content: center;
@@ -95,6 +129,10 @@ body {
   .profile-header {
     flex-direction: column;
     text-align: center;
+  }
+
+  .todo-controls {
+    flex-direction: column;
   }
 
 }

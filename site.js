@@ -45,6 +45,27 @@ if (isMorning) {
 	welcome.textContent = "Good Night!";
 }
 
+const getRandomPokemon = async () => {
+	const url = "https://pokeapi.co/api/v2/pokemon/" + Math.floor(Math.random() * 1025);
+	const response = await fetch(url);
+	return await response.json();
+};
+
+const renderPokemon = (pokemonObj) => {
+	const img = document.createElement("img");
+	img.src = pokemonObj.sprites.front_default;
+	img.alt = pokemonObj.name;
+	document.querySelector(".pokemon-ctr").append(img);
+	return pokemonObj;
+};
+
+const loadPokemon = async () => {
+	const pokemonObj = await getRandomPokemon();
+	renderPokemon(pokemonObj);
+};
+
+loadPokemon();
+
 localStorage.setItem("It's a secret to everybody.", "Nothing to see here.");
 
 const urls = [

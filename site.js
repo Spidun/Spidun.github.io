@@ -46,7 +46,7 @@ if (isMorning) {
 }
 
 
-//Fixed 
+
 
 const getRandomPokemon = async () => {
 	const url = "https://pokeapi.co/api/v2/pokemon/" + (Math.floor(Math.random() * 1025) + 1);

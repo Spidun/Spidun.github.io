@@ -59,6 +59,7 @@ const renderPokemon = (pokemonObj) => {
 	return pokemonObj;
 };
 
+
 const loadPokemon = async () => {
 	const pokemonObj = await getRandomPokemon();
 	renderPokemon(pokemonObj);

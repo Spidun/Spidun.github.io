@@ -45,32 +45,26 @@ if (isMorning) {
 	welcome.textContent = "Good Night!";
 }
 
-
-
-
 const getRandomPokemon = async () => {
-	const url = "https://pokeapi.co/api/v2/pokemon/" + (Math.floor(Math.random() * 1025) + 1);
+	const url = "https://pokeapi.co/api/v2/pokemon/" + Math.floor(Math.random() * 1025);
 	const response = await fetch(url);
-	return response.json();
+	return await response.json();
 };
 
-const renderPokemon = (pokemon) => {
+const renderPokemon = (pokemonObj) => {
 	const img = document.createElement("img");
-	img.src = pokemon.sprites.front_default;
-	img.alt = pokemon.name;
+	img.src = pokemonObj.sprites.front_default;
+	img.alt = pokemonObj.name;
 	document.querySelector(".pokemon-ctr").append(img);
+	return pokemonObj;
 };
 
-const displayRandomPokemon = async () => {
-	const pokemon = await getRandomPokemon();
-	renderPokemon(pokemon);
+const loadPokemon = async () => {
+	const pokemonObj = await getRandomPokemon();
+	renderPokemon(pokemonObj);
 };
 
-displayRandomPokemon();
-
-
-
-
+loadPokemon();
 
 localStorage.setItem("It's a secret to everybody.", "Nothing to see here.");
 

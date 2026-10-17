@@ -49,7 +49,7 @@ if (isMorning) {
 const getRandomPokemon = async () => {
 	const url = "https://pokeapi.co/api/v2/pokemon/" + (Math.floor(Math.random() * 1025) + 1);
 	const response = await fetch(url);
-	return await response.json();
+	return response.json();
 };
 
 const renderPokemon = (pokemon) => {

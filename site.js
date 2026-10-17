@@ -58,7 +58,7 @@ const renderPokemon = (pokemon) => {
 	const img = document.createElement("img");
 	img.src = pokemon.sprites.front_default;
 	img.alt = pokemon.name;
-	document.querySelector(".pokemonCON").append(img);
+	document.querySelector(".pokemon-ctr").append(img);
 };
 
 const displayRandomPokemon = async () => {
